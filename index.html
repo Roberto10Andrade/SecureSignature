@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assinatura Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>Assinatura Digital de Texto</h1>
+
+    
+    <form id="sign-form">
+      <label for="text-input">Texto a ser Assinado:</label>
+      <textarea id="text-input" rows="5" placeholder="Digite o texto aqui..."></textarea>
+      <button type="submit" id="sign-button">Gerar Assinatura</button>
+    </form>
+
+    
+    <div id="signature-result" class="result">
+      <h3>Assinatura Digital:</h3>
+      <textarea id="signature-output" rows="5" readonly></textarea>
+      <button id="copy-signature" class="copy-btn">Copiar Assinatura <i class="fas fa-copy"></i></button>
+    </div>
+
+    <div id="verify-result" class="result">
+      <h3>Verificação da Assinatura:</h3>
+      <p id="verification-status"></p>
+    </div>
+
+    
+    <div id="loading" class="loading">
+      <i class="fas fa-spinner fa-spin"></i> Processando...
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

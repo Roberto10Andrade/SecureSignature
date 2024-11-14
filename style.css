@@ -1,0 +1,254 @@
+/* Reset geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ 
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: url('img/bits-criptografia.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  
+
+  body::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: lightPulse 5s infinite ease-in-out;
+  }
+  
+  @keyframes lightPulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0.1;
+    }
+  }
+  
+
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(8px);
+    z-index: 0;
+  }
+  
+
+  .container {
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #FFD700;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: glowing 1.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowing {
+    0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; }
+    100% { text-shadow: 0 0 20px #FF6347, 0 0 30px #FF6347, 0 0 40px #FF6347; }
+  }
+  
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+    color: #fff;
+    text-align: left;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFD700;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  textarea:focus {
+    border-color: #FF6347;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.4);
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    background-color: #FF6347;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #FF4500;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  button:active {
+    transform: scale(0.98);
+  }
+  
+  .copy-btn {
+    padding: 10px 20px;
+    background-color: #00FF7F;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .copy-btn:hover {
+    background-color: #32CD32;
+    transform: scale(1.05);
+  }
+  
+  .copy-btn:active {
+    transform: scale(0.95);
+  }
+  
+  .result {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  textarea#signature-output {
+    width: 100%;
+    height: 150px;
+    background-color: transparent;
+    border: 1px solid #FFD700;
+    padding: 14px;
+    color: #FFD700;
+    font-size: 1rem;
+    resize: none;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  #loading {
+    display: none;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #FF6347;
+  }
+  
+  #verify-result {
+    display: none;
+  }
+  
+  #verification-status {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #00FF7F;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px 25px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 12px;
+    }
+  
+    .copy-btn {
+      font-size: 1rem;
+      padding: 8px 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 15px 10px;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  
+    .copy-btn {
+      font-size: 0.9rem;
+      padding: 6px 14px;
+    }
+  
+    textarea {
+      font-size: 0.9rem;
+    }
+  }
+  
